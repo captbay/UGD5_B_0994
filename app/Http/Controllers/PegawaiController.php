@@ -19,7 +19,7 @@ class PegawaiController extends Controller
     {
         //get posts
         // $pegawai = Pegawai::with(['departemens'])->paginate(5);
-
+        //coba cari cara konek ke departemen
         $pegawai = Pegawai::paginate(5);
 
 
