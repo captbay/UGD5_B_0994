@@ -15,6 +15,9 @@ class DepartemenController extends Controller
      *
      * @return void
      */
+
+    
+
     public function index()
     {
         //get posts

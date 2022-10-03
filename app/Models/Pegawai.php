@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use League\CommonMark\Extension\Table\Table;
 
 class Pegawai extends Model
 {
@@ -13,9 +14,15 @@ class Pegawai extends Model
      *
      * @var array
      */
-    public function Departemen()
+
+
+    protected $table = "pegawais";
+
+    
+
+    public function departemens()
     {
-        return $this->hasOne(Departemen::class);
+        return $this->belongsTo(Departemen::class, 'id_departemen');
     }
 
     protected $fillable = [

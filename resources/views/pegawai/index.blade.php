@@ -49,7 +49,7 @@
                                     <tr>
                                         <td class="text-center">{{$item->nomor_induk_pegawai }}</td>
                                         <td class="text-center">{{$item->nama_pegawai }}</td>
-                                        <td class="text-center">{{$item->id_departemen}}</td>
+                                        <td class="text-center">{{$item->departemens->nama_departemen}}</td>
                                         <td class="text-center">{{$item->email }}</td>
                                         <td class="text-center">{{$item->telepon }}</td>
                                         <td class="text-center">{{$item->gender ? "Pria" : "Wanita" }}</td>
