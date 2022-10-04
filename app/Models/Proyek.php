@@ -4,9 +4,8 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use League\CommonMark\Extension\Table\Table;
 
-class Pegawai extends Model
+class Proyek extends Model
 {
     use HasFactory;
     /**
@@ -16,7 +15,7 @@ class Pegawai extends Model
      */
 
 
-    protected $table = "pegawais";
+    protected $table = "proyeks";
 
 
 
