@@ -124,7 +124,8 @@
             <div class="float-right d-none d-sm-inline"> 200710994
             </div>
             <!-- Default to the left -->
-            <strong>Copyright &copy; {{ date('Y') }} <a href="#">AdminLTE.io</a>. </strong> All rights reserved.
+            <strong>Copyright &copy; {{ date('Y') }} <a href="#">AdminLTE.io</a>. </strong> All rights
+            reserved.
         </footer>
     </div>
     <!-- ./wrapper -->
@@ -132,8 +133,7 @@
     <!-- jQuery -->
     <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
     <!-- Bootstrap 4 -->
-    <script src="{{ asset('plugins/js/bootstrap.bundle.min.js')
-}}"></script>
+    <script src="{{ asset('plugins/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
 </body>

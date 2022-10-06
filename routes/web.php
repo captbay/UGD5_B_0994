@@ -21,6 +21,7 @@ Route::resource(
     '/departemen',
     \App\Http\Controllers\DepartemenController::class
 );
+// Route::get('/departemen/edit/{id}', [DepartemenController::class, 'edit']);
 Route::resource(
     '/pegawai',
     \App\Http\Controllers\PegawaiController::class
