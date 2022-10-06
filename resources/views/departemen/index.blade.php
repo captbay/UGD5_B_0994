@@ -43,17 +43,17 @@
                                         </tr>
                                     </thead>
                                     <tbody>
-                                        @forelse ($departemen as $item)
+                                        @forelse ($departemens as $departemen)
                                             <tr>
-                                                <td class="text-center">{{ $item->nama_departemen }}</td>
-                                                <td class="text-center">{{ $item->nama_manager }}</td>
-                                                <td class="text-center">{{ $item->jumlah_pegawai }}</td>
+                                                <td class="text-center">{{ $departemen->nama_departemen }}</td>
+                                                <td class="text-center">{{ $departemen->nama_manager }}</td>
+                                                <td class="text-center">{{ $departemen->jumlah_pegawai }}</td>
                                                 <td class="text-center">
                                                     <form
                                                         onsubmit="return confirm('Apakah Anda Yakin ?');"
-                                                        action="{{ route('departemen.destroy', $item->id) }}"
+                                                        action="{{ route('departemen.destroy', $departemen->id) }}"
                                                         method="POST">
-                                                        <a href="{{ route('departemen.edit', $item->id) }}"
+                                                        <a href="{{ route('departemen.edit', $departemen->id) }}"
                                                             class="btn btn-sm btnprimary">EDIT</a>
                                                         @csrf
                                                         @method('DELETE')
@@ -68,7 +68,7 @@
                                     </tbody>
                                 </table>
                                 <div class="d-flex justify-content-center">
-                                    {{ $departemen->links() }}
+                                    {{ $departemens->links() }}
                                 </div>
 
                             </div>

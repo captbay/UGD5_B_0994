@@ -20,9 +20,9 @@ class DepartemenController extends Controller
     public function index()
     {
         //get departemen
-        $departemen = Departemen::latest()->paginate(5);
+        $departemens = Departemen::latest()->paginate(5);
         //render view with posts
-        return view('departemen.index', compact('departemen'));
+        return view('departemen.index', compact('departemens'));
     }
     /**
      * create
