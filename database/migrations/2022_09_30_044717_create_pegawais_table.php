@@ -17,8 +17,8 @@ return new class extends Migration
             $table->id();
             $table->string('nomor_induk_pegawai');
             $table->string('nama_pegawai');
-            $table->foreignId('id_departemen')->constrained('departemens');
-            $table->string('email');
+            $table->foreignId('id_departemen')->constrained('departemens')->onUpdate('cascade')->onDelete('cascade');
+            $table->string('email')->unique();
             $table->integer('telepon');
             $table->boolean('gender');
             $table->integer('gaji_pokok');

@@ -30,6 +30,9 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
+                        <a href="{{ route('pegawai.create') }}" class="btn btn-md btn-success mb-3">TAMBAH
+                            Pegawai</a>
+                        
                         <div class="table-responsive p-0">
                             <table class="table table-hover textnowrap">
                                 <thead>
@@ -42,6 +45,7 @@
                                         <th class="text-center">Gender</th>
                                         <th class="text-center">Gaji Pokok</th>
                                         <th class="text-center">Status</th>
+                                        <th class="text-center">Aksi</th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -55,6 +59,18 @@
                                         <td class="text-center">{{$item->gender ? "Pria" : "Wanita" }}</td>
                                         <td class="text-center">@currency($item->gaji_pokok)</td>
                                         <td class="text-center">{{$item->status ? "Aktif" : "Tidak Aktif"}}</td>
+                                        <td class="text-center">
+                                            <form onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                action="{{ route('pegawai.destroy', $item->id) }}"
+                                                method="POST">
+                                                <a href="{{ route('pegawai.edit', $item->id) }}"
+                                                    class="btn btn-sm btn-primary">EDIT</a>
+
+                                                @csrf
+                                                @method('DELETE')
+                                                <button type="submit" class="btn btn-sm btn-danger">Hapus</button>
+                                            </form>
+                                        </td>
                                     </tr>
                                     @empty
                                     <div class="alert alert-danger">Data Pegawai belum tersedia

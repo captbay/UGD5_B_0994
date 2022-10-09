@@ -30,6 +30,7 @@
                 <div class="col-12">
                     <div class="card">
                         <div class="card-body">
+                            
                             <form action="{{ route('departemen.update', $departemen->id) }}" method="POST"
                                 enctype="multipart/form-data">
                                 @csrf
@@ -78,7 +79,7 @@
                                     </div>
                                 </div>
                                 <button type="submit" class="btn btn-md btn-primary">UPDATE</button>
-                                <button type="reset" class="btn btn-md btn-warning">RESET</button>
+                                {{-- <button type="reset" class="btn btn-md btn-warning">RESET</button> --}}
                             </form>
                         </div>
                         <!-- /.card-body -->

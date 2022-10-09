@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('proyeks', function (Blueprint $table) {
             $table->id();
             $table->string('nama_proyek');
-            $table->foreignId('id_departemen')->constrained('departemens');
+            $table->foreignId('id_departemen')->constrained('departemens')->onUpdate('cascade')->onDelete('cascade');
             $table->date('waktu_mulai');
             $table->date('waktu_selesai');
             $table->integer('nilai_proyek');

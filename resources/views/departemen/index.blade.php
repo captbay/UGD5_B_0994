@@ -32,6 +32,7 @@
                         <div class="card-body">
                             <a href="{{ route('departemen.create') }}" class="btn btn-md btn-success mb-3">TAMBAH
                                 DEPARTEMEN</a>
+                            
                             <div class="table-responsive p-0">
                                 <table class="table table-hover textnowrap">
                                     <thead>
@@ -49,12 +50,12 @@
                                                 <td class="text-center">{{ $departemen->nama_manager }}</td>
                                                 <td class="text-center">{{ $departemen->jumlah_pegawai }}</td>
                                                 <td class="text-center">
-                                                    <form
-                                                        onsubmit="return confirm('Apakah Anda Yakin ?');"
+                                                    <form onsubmit="return confirm('Apakah Anda Yakin ?');"
                                                         action="{{ route('departemen.destroy', $departemen->id) }}"
                                                         method="POST">
                                                         <a href="{{ route('departemen.edit', $departemen->id) }}"
-                                                            class="btn btn-sm btnprimary">EDIT</a>
+                                                            class="btn btn-sm btn-primary">EDIT</a>
+
                                                         @csrf
                                                         @method('DELETE')
                                                         <button type="submit" class="btn btn-sm btn-danger">Hapus</button>

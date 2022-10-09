@@ -57,17 +57,16 @@ class DepartemenController extends Controller
             //Mengisi variabel yang akan ditampilkan pada view mail
             $content = [
                 'body' => $request->nama_departemen,
+                'title' => 'Departemen',
             ];
             //Mengirim email ke emailtujuan@gmail.com
             FacadesMail::to('agespramana9@gmail.com')->send(new
                 DepartemenMail($content));
             //Redirect jika berhasil mengirim email
-            return redirect()->route('departemen.index')->with(['success'
-            => 'Data Berhasil Disimpan, email telah terkirim!']);
+            return redirect()->route('departemen.index')->with(['success' => 'Data Berhasil Disimpan, email telah terkirim!']);
         } catch (Exception $e) {
             //Redirect jika gagal mengirim email
-            return redirect()->route('departemen.index')->with(['success'
-            => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
+            return redirect()->route('departemen.index')->with(['success' => 'Data Berhasil Disimpan, namun gagal mengirim email!']);
         }
     }
 
@@ -77,10 +76,13 @@ class DepartemenController extends Controller
      * @param  mixed $post
      * @return void
      */
-    public function edit(Departemen $departemen)
+    public function edit(Int $id)
     {
+        $departemen = Departemen::find($id);
+
         return view('departemen.edit', compact('departemen'));
     }
+
 
     /**
      * update
@@ -89,7 +91,7 @@ class DepartemenController extends Controller
      * @param  mixed $departemen
      * @return void
      */
-    public function update(Request $request, Departemen $departemen)
+    public function update(Request $request, Int $id)
     {
         //validate form
         $this->validate($request, [
@@ -116,7 +118,8 @@ class DepartemenController extends Controller
         //         'content'   => $request->content
         //     ]);
 
-        // } else { }
+        // } else { }   
+        $departemen = Departemen::find($id);
 
         //update departemen without image
         $departemen->update([
@@ -136,11 +139,12 @@ class DepartemenController extends Controller
      * @param  mixed $departemen
      * @return void
      */
-    public function destroy(Departemen $departemen)
+    public function destroy(Int $id)
     {
         // //delete image
         // Storage::delete('public/departemens/' . $departemen->image);
 
+        $departemen = Departemen::find($id);
         //delete departemen
         $departemen->delete();
 

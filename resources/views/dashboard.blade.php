@@ -128,14 +128,37 @@
             reserved.
         </footer>
     </div>
-    <!-- ./wrapper -->
-    <!-- REQUIRED SCRIPTS -->
-    <!-- jQuery -->
-    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+
     <!-- Bootstrap 4 -->
     <script src="{{ asset('plugins/js/bootstrap.bundle.min.js') }}"></script>
     <!-- AdminLTE App -->
     <script src="{{ asset('js/adminlte.min.js') }}"></script>
+
+    <script src="{{ asset('js/app.js') }}" type="text/js"></script>
+
+    <!-- jQuery -->
+    <script src="{{ asset('plugins/jquery/jquery.min.js') }}"></script>
+
+    <!-- Toastr dari plugin -->
+    <link rel="stylesheet" href="{{ asset('plugins/toastr/toastr.min.css')}}">
+    <script src="{{ asset('plugins/toastr/toastr.min.js') }}"></script>
+
+    <!-- tostr-->
+    <script>
+        //message with toastr
+        @if(session()->has('success'))
+        
+            toastr.success('{{ session('success') }}', 'BERHASIL!'); 
+
+        @elseif(session()->has('error'))
+
+            toastr.error('{{ session('error') }}', 'GAGAL!'); 
+            
+        @endif
+
+    </script>
+
+    
 </body>
 
 </html>

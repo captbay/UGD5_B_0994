@@ -25,13 +25,11 @@ class Proyek extends Model
     }
 
     protected $fillable = [
-        'nomor_induk_pegawai',
-        'nama_pegawai',
+        'nama_proyek',
         'id_departemen',
-        'email',
-        'telepon',
-        'gender',
-        'gaji_pokok',
-        'status',
+        'waktu_mulai',
+        'waktu_selesai',
+        'nilai_proyek',
+        'status'
     ];
 }

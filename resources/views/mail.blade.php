@@ -10,7 +10,7 @@
 
 <body>
     <h2>Selamat</h2>
-    <p>Departemen dengan nama {{ $content['body'] }} berhasil dibuat</p>
+    <p>{{ $content['title'] }} dengan nama {{ $content['body'] }} berhasil dibuat</p>
 </body>
 
 </html>
