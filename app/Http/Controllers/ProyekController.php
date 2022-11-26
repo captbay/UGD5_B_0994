@@ -121,8 +121,8 @@ class ProyekController extends Controller
             'nama_proyek' => 'required',
             'id_departemen' => 'required',
             'waktu_mulai' => 'required',
-            'waktu_selesai' => 'required',
-            'nilai_proyek' => 'required',
+            'waktu_selesai' => 'required|after:waktu_mulai',
+            'nilai_proyek' => 'required|Integer|min:10000000',
             'status' => 'required'
         ]);
 
